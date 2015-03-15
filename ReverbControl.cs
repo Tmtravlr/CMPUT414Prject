@@ -8,7 +8,7 @@ public class ReverbControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		reverbFilter = gameObject.AddComponent("AudioReverbFilter") as AudioReverbFilter;
+		reverbFilter = gameObject.AddComponent<AudioReverbFilter>() as AudioReverbFilter;
 
 	}
 	
