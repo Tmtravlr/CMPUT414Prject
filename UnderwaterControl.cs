@@ -17,7 +17,6 @@ public class UnderwaterControl : MonoBehaviour {
 	void Start () {
 		//Create a low pass filter to use
 		lowpassFilter = gameObject.AddComponent<AudioLowPassFilter>() as AudioLowPassFilter;
-	
 	}
 
 	void Update () {
@@ -35,9 +34,9 @@ public class UnderwaterControl : MonoBehaviour {
 		//pass cutoff frequency. Otherwise set it to 20,000 Hz, the maximum that humans can hear.
 
 		if (underwater) {
-			lowpassFilter.cutoffFrequency = (lowpassFilter.cutoffFrequency*2 + cutoffFrequency) / 3.0f;
+			lowpassFilter.cutoffFrequency = cutoffFrequency;
 		} else {
-			lowpassFilter.cutoffFrequency = (lowpassFilter.cutoffFrequency*2 + 20000.0f) / 3.0f;
+			lowpassFilter.cutoffFrequency =  20000.0f;
 		}
 	}
 }
